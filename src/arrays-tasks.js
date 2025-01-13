@@ -8,7 +8,7 @@
  ******************************************************************************************** */
 
 /**
- * Creates an array of integers from the specified start to end (inclusive).
+ * 1 Creates an array of integers from the specified start to end (inclusive).
  *
  * @param {number} start - The first number of an array.
  * @param {number} end - The last number of an array.
@@ -25,7 +25,7 @@ function getIntervalArray(start, end) {
 }
 
 /**
- * Returns a new array where each element is the sum of the corresponding elements
+ * 2 Returns a new array where each element is the sum of the corresponding elements
  * from two arrays. Arrays can have different lengths.
  *
  * @param {array} arr1 - The first array.
@@ -46,7 +46,7 @@ function sumArrays(arr1, arr2) {
 }
 
 /**
- * Returns an index of the specified element in array or -1 if element is not found.
+ * 3 Returns an index of the specified element in array or -1 if element is not found.
  *
  * @param {array} arr - The input array.
  * @param {any} value - Element to search.
@@ -62,7 +62,7 @@ function findElement(arr, value) {
 }
 
 /**
- * Returns a number of all occurrences of the specified item in an array.
+ * 4 Returns a number of all occurrences of the specified item in an array.
  *
  * @param {array} arr - The input array.
  * @param {any} item - Element to search.
@@ -80,7 +80,7 @@ function findAllOccurrences(arr, item) {
 }
 
 /**
- * Removes falsy values from the specified array.
+ * 5 Removes falsy values from the specified array.
  * Falsy values: false, null, 0, "", undefined, and NaN.
  *
  * @param {array} arr - The input array.
@@ -91,12 +91,12 @@ function findAllOccurrences(arr, item) {
  *    removeFalsyValues([ 1, 2, 3, 4, 5, 'false' ]) => [ 1, 2, 3, 4, 5, 'false' ]
  *    removeFalsyValues([ false, 0, NaN, '', undefined ]) => [ ]
  */
-function removeFalsyValues(/* arr */) {
-  throw new Error('Not implemented');
+function removeFalsyValues(arr) {
+  return arr.filter(Boolean);
 }
 
 /**
- * Returns an array containing the lengths of each string in a specified array of strings.
+ * 6 Returns an array containing the lengths of each string in a specified array of strings.
  *
  * @param {array} arr - The input array.
  * @return {array} - The array of string lengths.
@@ -105,12 +105,13 @@ function removeFalsyValues(/* arr */) {
  *    getStringsLength([ '', 'a', 'bc', 'def', 'ghij' ]) => [ 0, 1, 2, 3, 4 ]
  *    getStringsLength([ 'angular', 'react', 'ember' ]) => [ 7, 5, 5 ]
  */
-function getStringsLength(/* arr */) {
-  throw new Error('Not implemented');
+function getStringsLength(arr) {
+  const res = arr.map((el) => el.trim().length);
+  return res;
 }
 
 /**
- * Returns the average of all items in the specified array of numbers.
+ * 7 Returns the average of all items in the specified array of numbers.
  * The result should be rounded to two decimal places.
  *
  * @param {array} arr - The input array
@@ -123,12 +124,15 @@ function getStringsLength(/* arr */) {
  *   getAverage([ 1, 10, 100, 1000 ])  => 277,75
  *   getAverage([ 2, 3, 3 ])  => 2,67
  */
-function getAverage(/* arr */) {
-  throw new Error('Not implemented');
+function getAverage(arr) {
+  if (arr.length === 0) return 0;
+  const res = arr.reduce((acc, item) => acc + item, 0) / arr.length;
+  if (res % 1 === 0) return res;
+  return +res.toFixed(2);
 }
 
 /**
- * Checks if all strings in an array have the same length.
+ * 8 Checks if all strings in an array have the same length.
  *
  * @param {array} arr - The array of strings to be checked.
  * @return {boolean} - True if all strings have the same length, false otherwise.
@@ -137,8 +141,8 @@ function getAverage(/* arr */) {
  *    isSameLength(['orange', 'banana', 'cherry']) => true
  *    isSameLength(['cat', 'dog', 'elephant']) => false
  */
-function isSameLength(/* arr */) {
-  throw new Error('Not implemented');
+function isSameLength(arr) {
+  return arr.every((item) => item.length === arr[0].length);
 }
 
 /**
