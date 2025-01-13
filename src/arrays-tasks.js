@@ -146,7 +146,7 @@ function isSameLength(arr) {
 }
 
 /**
- * Checks if there are elements in the array where the value is equal to its index.
+ * 9 Checks if there are elements in the array where the value is equal to its index.
  *
  * @param {array} arr - The array of elements to be checked.
  * @return {boolean} - True if there are elements with value equal to their index, false otherwise.
@@ -156,12 +156,12 @@ function isSameLength(arr) {
  *    isValueEqualsIndex([2, 1, 0, 4, 5]) => true
  *    isValueEqualsIndex([10, 20, 30, 40, 50]) => false
  */
-function isValueEqualsIndex(/* arr */) {
-  throw new Error('Not implemented');
+function isValueEqualsIndex(arr) {
+  return arr.some((item, index) => item === index);
 }
 
 /**
- * Inserts the item into specified array at specified index.
+ * 10 Inserts the item into specified array at specified index.
  *
  * @param {array} arr - The input array.
  * @param {any} item - The item to insert.
@@ -176,7 +176,7 @@ function insertItem(/* arr, item, index */) {
 }
 
 /**
- * Returns the n first items of the specified array.
+ * 11 Returns the n first items of the specified array.
  *
  * @param {array} arr - The input array.
  * @param {number} n - Number of items.
@@ -186,12 +186,12 @@ function insertItem(/* arr, item, index */) {
  *    getHead([ 'a', 'b', 'c', 'd'], 3) => [ 'a', 'b', 'c' ]
  *    getHead([ 'a', 'b', 'c', 'd'], 0) => []
  */
-function getHead(/* arr, n */) {
-  throw new Error('Not implemented');
+function getHead(arr, n) {
+  return arr.slice(0, n);
 }
 
 /**
- * Returns the n last items of the specified array.
+ * 12 Returns the n last items of the specified array.
  *
  * @param {array} arr - The input array.
  * @param {number} n - Number of items.
@@ -201,12 +201,13 @@ function getHead(/* arr, n */) {
  *    getTail([ 'a', 'b', 'c', 'd'], 3) => [ 'b', 'c', 'd' ]
  *    getTail([ 'a', 'b', 'c', 'd'], 0) => []
  */
-function getTail(/* arr, n */) {
-  throw new Error('Not implemented');
+function getTail(arr, n) {
+  if (n === 0) return [];
+  return arr.slice(-n);
 }
 
 /**
- * Returns the doubled array - elements of the specified array
+ * 13 Returns the doubled array - elements of the specified array
  * are repeated twice using original order.
  *
  * @param {array} arr - The input array.
@@ -217,12 +218,12 @@ function getTail(/* arr, n */) {
  *    doubleArray([0, 1, 2, 3, 4, 5]) => [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5]
  *    doubleArray([]) => []
  */
-function doubleArray(/* arr */) {
-  throw new Error('Not implemented');
+function doubleArray(arr) {
+  return arr.concat(arr);
 }
 
 /**
- * Concatenates all elements from specified array into single string with ',' delimiter.
+ * 14 Concatenates all elements from specified array into single string with ',' delimiter.
  *
  * @param {array} arr - The input array.
  * @return {string} - The concatenated string.
@@ -232,12 +233,12 @@ function doubleArray(/* arr */) {
  *    toStringList([1, 2, 3, 4, 5]) => '1,2,3,4,5'
  *    toStringList(['rock', 'paper', 'scissors']) => 'rock,paper,scissors'
  */
-function toStringList(/* arr */) {
-  throw new Error('Not implemented');
+function toStringList(arr) {
+  return arr.join(',');
 }
 
 /**
- * Returns array containing only unique values from the specified array.
+ * 15 Returns array containing only unique values from the specified array.
  *
  * @param {array} arr - The input array.
  * @return {array} - The array with unique values.
@@ -248,12 +249,12 @@ function toStringList(/* arr */) {
  *   distinct([ 1, 1, 2, 2, 3, 3, 4, 4]) => [ 1, 2, 3, 4]
  *   distinct([]) => []
  */
-function distinct(/* arr */) {
-  throw new Error('Not implemented');
+function distinct(arr) {
+  return Array.from(new Set(arr));
 }
 
 /**
- * Creates an n-dimensional array and fills it with zeros.
+ * 16 Creates an n-dimensional array and fills it with zeros.
  *
  * @param {number} n - Depth of outter array (n > 0).
  * @param {number} size - Length of all arrays (size > 0).
@@ -270,7 +271,7 @@ function createNDimensionalArray(/* n, size */) {
 }
 
 /**
- * Flattens a nested array into a single-level array.
+ * 17 Flattens a nested array into a single-level array.
  *
  * @param {array} nestedArray - The nested array to be flattened.
  * @return {array} - A single-level array.
@@ -285,7 +286,7 @@ function flattenArray(/* nestedArray */) {
 }
 
 /**
- * Projects each element of the specified array to a sequence
+ * 18 Projects each element of the specified array to a sequence
  * and flattens the resulting sequences into one array.
  *
  * @param {array} arr - The input array
@@ -302,7 +303,7 @@ function selectMany(/* arr, childrenSelector */) {
 }
 
 /**
- * Every month, you record your income and expenses.
+ * 19 Every month, you record your income and expenses.
  * Expenses may be greater than income.
  * You need to calculate the final balance.
  *
@@ -319,7 +320,7 @@ function calculateBalance(/* arr */) {
 }
 
 /**
- * Breaks an array into chunks of the specified size.
+ * 20 Breaks an array into chunks of the specified size.
  *
  * @param {array} arr - The array to be broken into chunks.
  * @param {number} chunkSize - The size of each chunk.
@@ -335,7 +336,7 @@ function createChunks(/* arr, chunkSize */) {
 }
 
 /**
- * Generates an array of odd numbers of the specified length.
+ * 21 Generates an array of odd numbers of the specified length.
  *
  * @param {number} len - The length of an array.
  * @return {array} - An array of odd numbers.
@@ -351,7 +352,7 @@ function generateOdds(/* len */) {
 }
 
 /**
- * Returns an element from the multidimensional array by the specified indices.
+ * 22 Returns an element from the multidimensional array by the specified indices.
  *
  * @param {array} arr - The input multidimensional array
  * @param {array} indices - The array of indices
@@ -367,7 +368,7 @@ function getElementByIndices(/* arr, indices */) {
 }
 
 /**
- * Returns the number of all falsy values in the specified array.
+ * 23 Returns the number of all falsy values in the specified array.
  *
  * @param {array} arr - The input array.
  * @return {number} - The number of all falsy values.
@@ -383,7 +384,7 @@ function getFalsyValuesCount(/* arr */) {
 }
 
 /**
- * Creates an identity matrix of the specified size.
+ * 24 Creates an identity matrix of the specified size.
  *
  * @param {number} n - A size of the matrix.
  * @return {array} - An identity matrix.
@@ -405,7 +406,7 @@ function getIdentityMatrix(/* n */) {
 }
 
 /**
- * Returns an array containing indices of odd elements in the input array.
+ * 25 Returns an array containing indices of odd elements in the input array.
  *
  * @param {array} numbers - The array of numbers.
  * @return {array} - An array containing indices of odd elements.
@@ -420,7 +421,7 @@ function getIndicesOfOddNumbers(/* numbers */) {
 }
 
 /**
- * Returns the array of RGB Hex strings from the specified array of numbers.
+ * 26Returns the array of RGB Hex strings from the specified array of numbers.
  *
  * @param {array} arr - The input array.
  * @return {array} - The array of RGB Hex strings.
@@ -434,7 +435,7 @@ function getHexRGBValues(/* arr */) {
 }
 
 /**
- * Returns the n largest values from the specified array
+ * 27 Returns the n largest values from the specified array
  *
  * @param {array} arr - The input array
  * @param {number} n - Number of maximum values.
@@ -452,7 +453,7 @@ function getMaxItems(/* arr, n */) {
 }
 
 /**
- * Finds and returns an array containing only the common elements found in two arrays.
+ * 28 Finds and returns an array containing only the common elements found in two arrays.
  *
  * @param {array} arr1 - The first array.
  * @param {array} arr2 - The second array.
@@ -468,7 +469,7 @@ function findCommonElements(/* arr1, arr2 */) {
 }
 
 /**
- * Finds the length of the longest increasing subsequence of a given array of integers.
+ * 29 Finds the length of the longest increasing subsequence of a given array of integers.
  *
  * @param {array} nums - The array of integers.
  * @return {number} - The length of the longest increasing subsequence.
@@ -483,7 +484,7 @@ function findLongestIncreasingSubsequence(/* nums */) {
 }
 
 /**
- * Propagates every item in sequence its position times
+ * 30 Propagates every item in sequence its position times
  * Returns an array that consists of: one first item, two second items, three third items etc.
  *
  * @param {array} arr - The input array
@@ -501,7 +502,7 @@ function propagateItemsByPositionIndex(/* arr */) {
 }
 
 /**
- * Shifts an array by n positions. If n is negative, the array is shifted to the left;
+ * 31 Shifts an array by n positions. If n is negative, the array is shifted to the left;
  * if positive, it is shifted to the right.
  *
  * @param {array} arr - The array to be shifted.
@@ -518,7 +519,7 @@ function shiftArray(/* arr, n */) {
 }
 
 /**
- * Sorts digit names.
+ * 32 Sorts digit names.
  *
  * @param {array} arr - The input array.
  * @return {array} - Sorted array.
@@ -535,7 +536,7 @@ function sortDigitNamesByNumericOrder(/* arr */) {
 }
 
 /**
- * Swaps the head and tail of the specified array:
+ * 33 Swaps the head and tail of the specified array:
  * the head (first half) of array move to the end, the tail (last half) move to the start.
  * The middle element (if exists) leave on the same position. *
  *
